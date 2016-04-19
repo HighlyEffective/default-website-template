@@ -1,0 +1,97 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*----------------------------------------------------------------------------- 
+[client]	
+
+version:   	1.0 
+date:      	
+author:    	Timo Mulder
+-----------------------------------------------------------------------------*/
+
+html,
+body {
+	margin:0;
+	padding:0;
+	height:100%;
+}
+
+.innerWrapper {
+	width: 100%;
+	max-width:1000px;
+	margin:0 auto;
+	}
+
+#wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	position:relative;
+	margin:0 auto -60px;
+}
+
+/*   --------- Header ----------   */
+
+#header {
+	background:#EEE;
+	height: 60px;
+}
+
+/*   --------- Menu ----------   */
+
+/*   --------- Content ----------   */
+
+#content {
+	padding-bottom:70px;
+	background-color:#fafafa;
+	width:1000px;
+	margin:0 auto;
+}
+
+/*   --------- Footer ----------   */
+
+#footer {
+	width:100%;
+	background:#EEE;
+}
+
+#footer, .push {
+	height:60px;
+	}
+
+	
+/* Powered by */	
+#poweredBy {
+    display: inline-block;
+    position: absolute;
+    top: 6px;
+	left:80px;
+}
+#poweredBy a {
+    color: #000;
+    font-size: .8em;
+    text-decoration: none;
+}
+#poweredBy a:hover {
+    text-decoration: underline;
+}
+#poweredBy:before {
+    background: url("../../../images/mask/pharmeon_logo/ph-logo_black-bg.png") no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    height: 15px;
+    padding-right: 1px;
+    width: 15px;
+}	
+
+/*   --------- Type ----------   */
+
+a { 
+	color:;
+	text-decoration:none;
+	}
+
+a:hover { text-decoration:underline; }	
+
+
+	
+/*   --------- Misc. ----------   */
