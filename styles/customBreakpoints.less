@@ -1,0 +1,24 @@
+
+ 
+/* ==========================================================================
+   Breakpoints - November 2014
+   ========================================================================== */
+
+    // Media queries
+    @breakpoint-sm: 568px;
+    @breakpoint-md: 805px;
+    @breakpoint-lg: 950px;
+
+    @retina: ~'only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-devicepixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx)';
+    @landscape: ~'all and (orientation: landscape)';
+    @portrait: ~'all and (orientation: portrait)';
+
+
+    //shortcut media: " @media(@min-md) { //rules }"
+    @min-sm: ~'min-width: @{breakpoint-sm}'; 
+    @min-md: ~'min-width: @{breakpoint-md}';
+    @min-lg: ~'min-width: @{breakpoint-lg}';
+
+    @max-sm: ~'max-width: @{breakpoint-sm}'; 
+    @max-md: ~'max-width: @{breakpoint-md}';
+    @max-lg: ~'max-width: @{breakpoint-lg}';

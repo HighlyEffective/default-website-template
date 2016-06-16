@@ -1,0 +1,389 @@
+/* ==========================================================================
+   Includes 
+============================================================================= */
+@import "variables";    
+@import "customBreakpoints";      
+@import url(https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css); 
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+
+// Define main color here or in seperate theme file if you have more themes/colors
+// @brandColor1: #3276bd;
+
+html * {
+  box-sizing: border-box;
+}
+
+html.open {
+  position: fixed;
+  @media(@min-md){
+    position: static;
+  }
+}
+
+html,
+body {
+  margin:0;
+  padding:0;
+  height:100%;
+  width: 100%;
+  background-color: #fff;
+  color:#959697;
+  font-size: 16px; 
+  font-family: sans-serif; 
+}
+
+#header,
+#content,
+#footer {
+  position: relative;
+}
+
+#wrapper {
+  width: 100%;
+  position:relative;
+}
+
+#wrapper,
+#flexWrapper {
+  display: table;
+  table-layout: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+
+#flexWrapper {
+  position: relative;
+  margin: 0 auto;
+}
+
+ .innerWrapper {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  max-width: 940px;
+}
+
+
+/*   --------- Header ----------   */
+
+#header {
+  display: block;
+  height: 200px;
+  width: 100%;
+  padding-top: 45px;
+  background-color: @brandColor-main;
+  @media(@min-md){
+    padding-top: 0;
+  }
+}
+
+#header > .innerWrapper {
+  max-width: 1280px;
+}
+
+.contentWrapper {
+  display: table;
+}
+
+/*   --------- Menu ----------   */
+
+.menuWrapper {  
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;  
+  background-color: #fff;
+  @media(@min-md){
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    width: 220px;
+    margin-right: 40px;
+    margin-left: 5px;
+    position: relative;
+    background-color: transparent;
+  }
+
+  .open & { 
+    height: 100%;
+  }
+
+  nav {  
+    position: relative;
+    width: 100%;
+    z-index: 10;
+    background-color: #fff;
+  }
+
+  .open #level1 {
+    height: 100%;
+    padding-top: 45px;
+    @media(@min-md){
+      padding-top: 0;
+    }
+  }
+
+  .menu-toggle,
+  .menu-toggle:hover {
+    position:fixed;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 1em;
+    border: none;
+    background-color: #fff;
+    border-bottom: 1px solid #fff;
+    color: @brandColor-main;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: left;
+    @media(@min-md){
+      display: none;  
+    }
+  }
+
+  .menu-toggle span {
+    text-align: right;
+    padding: 5px 10px;
+    border: 2px solid @brandColor-main;
+  }
+
+  nav #level1 {
+    display: none;
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    background-color: #fff;
+    @media(@min-md){
+      display: block; 
+      overflow: visible;
+    }
+  }
+
+  nav.open #level1 {
+    display:block;
+    width: 100%;
+  }
+
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 220px;
+    @media(@min-md){
+      width:100%;
+    }
+  }
+
+  nav li {
+    width: 100%;
+    position: relative;
+    border-top: 1px solid transparent;
+    @media(@min-md){
+      width: 100%;
+    }
+  }
+
+  nav .submenu li:hover {
+    background-color: transparent;
+  }
+
+  nav a {
+    display: inline-block;
+    width: 100%;
+    padding: 11px 20px;
+    color: #959697;
+    word-wrap: break-word;
+    text-decoration: none;
+  }
+
+  nav .level1-item {
+    border-top: 1px solid #eeeae7;
+  }
+
+  nav .last.level1-item {
+    border-bottom: 1px solid #eeeae7;
+  }
+
+  nav a.selected {
+    color: @brandColor-main;
+  }
+
+  nav li.submenu > a {
+    padding-right: 40px;
+  }
+
+  nav li.level1-item:hover > a,
+  nav > a:hover,
+  nav a.selected {
+    background-color: @brandColor-main; 
+    color: #fff;
+    text-decoration: none;
+  }
+
+  nav li.level1-item:hover:after,
+  li.submenu.selected:after {
+    color: #fff;
+  }
+
+  nav .level2 a:hover,
+  nav .level2 a.selected {
+    color: @brandColor-main;
+  }
+
+  nav .level2 a:hover:after,
+  nav a.selected:after {
+    font-family: 'FontAwesome';
+    content: "\f104";
+    position: absolute;
+    right: 15px;
+    top: 0;
+    line-height: 39px;
+    color: @brandColor-main;
+  }
+
+  nav li.level1-item:hover > a:after {
+    background-color: transparent;
+  }
+
+  li.submenu:after {
+    font-family: 'FontAwesome';
+    content: "\f105";
+    position: absolute;
+    right: 10px;
+    top: 0;
+    line-height: 39px;
+    color: @brandColor-main;
+  }
+
+
+  .level2 {  
+    width: 100%;
+    @media(@min-md){
+      display: none;
+      position: absolute;
+      left: 100%;
+      top: 0;
+      background-color: #f4f4f4;
+    }
+  }
+
+  .level1-item:hover .level2 {
+    @media(@min-md){
+      display: block;
+      border: none;
+    }
+  }
+
+  nav .level2 a {
+    background-color: transparent;
+    border-bottom: 0;
+  }
+
+  .level1-item:hover .level2.level2-trigger {
+    display: block;
+  }
+
+} // end of .menuWrapper
+
+/*   --------- Content ----------   */
+
+#content {
+  max-width: 1280px;
+  margin: 0 auto;
+  @media(@min-md){
+    padding: 3em 0;
+  }
+}
+
+#content:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+#content .innerWrapper {
+  max-width: 940px;
+  @media(@min-lg){
+    display: block;
+  }
+}
+
+#main {
+  padding: 1em 1em 4em 1em;
+  display: block;
+  vertical-align: top;
+  @media(@min-md) {
+    display: table-cell;
+    width: 100%;
+    padding: 0;
+    padding-right: 1em;
+  }
+  @media(@min-lg) {
+    padding: 0;   
+  }
+}
+
+
+/*   --------- Footer ----------   */
+
+#footer {
+  display: table-row;
+  height: 1px;
+  background-color: @brandColor-tertiary;
+}
+
+#footer .innerWrapper {
+  padding: 1em;  
+  display: block;
+  margin: 0 auto;
+  font-size: 12px;
+  min-height: 47px;
+  @media(@min-md) {
+    padding: 0 1em;
+    height: 47px;
+    line-height: 47px;
+    max-width: 940px;
+  }
+}
+
+
+/*   --------- Type ----------   */
+
+h1, h2, h3, h4, h5, h6 {
+  color: @brandColor-accent;
+}
+
+#main > h1 {
+  margin-top: 0;
+}
+
+a { 
+  color: @brandColor-main;
+  text-decoration:none;
+}
+
+a:hover { 
+  text-decoration: underline; 
+}  
+
+
+
+/* Uncomment when you dont want/need a sticky footer on mobile */
+// @media(@max-md) {
+//   #wrapper, #flexWrapper, #footer  {
+//     display: block;
+//     height: auto;
+//     min-height: 100%;
+//   }
+// }
+
+
+
